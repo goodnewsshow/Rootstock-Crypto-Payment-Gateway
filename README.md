@@ -42,10 +42,17 @@ f. Open your IDE and create a .env and .gitignore if you do not see them.
 Step 2.
 
 Design the Smart Contract! 
+
+Module 1: This is the capstone project Module. 
+
+The scope of my contribution to this idea will be to develop a single, clear on-chain primitive which is identified as a subscription state machine. This project is for my capstone project in the Rootstock rootcamp and is this Module 1.
   
-a. Define the contract's rules, including payment conditions and time constraints. Use Solidity, the programming language for Ethereum-compatible smart contracts, to write the contract. Implement Time-Based Logic and include functions that trigger payments based on time conditions. For example, payments can be released after a specific action and time. Integrate Oracles for External Data to fetch real-world data if needed, such as exchange rates or event outcomes that may affect payment conditions. In this project, I required a specific time and exchange rate before the contract can payment is made.
+a. Define the contract's rules, including payment conditions and time constraints. Use Solidity, the programming language for Ethereum-compatible smart contracts, to write the contract. Implement Time-Based Logic and include functions that trigger payments based on time conditions. For example, payments can be released after a specific action and time. More advanced contribution would be to integrate Oracles for External Data to fetch real-world data, such as exchange rates or event outcomes that may affect payment conditions. 
+
+In this project, I required a specific time and exchange rate before the contract can payment is made.
 
 Write the contract using Solidity v 0.8.20.
+Create a new file for the smart contract and name it Subscription.sol. Write the To Do's in comments and write the code.
 
 Step 3.
 
