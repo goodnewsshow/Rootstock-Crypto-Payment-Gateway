@@ -52,7 +52,7 @@ a. Define the contract's rules, including payment conditions and time constraint
 In this project, I required a specific time and exchange rate before the contract can payment is made.
 
 Write the contract using Solidity v 0.8.20.
-Create a new file for the smart contract and name it Subscription.sol. Write the To Do's in comments and write the code.
+Create a new file for the smart contract and name it Subscription.sol. Re-write includes RIFSubscription for the token needed to have recurring payment permission. 
 
 Step 3.
 
