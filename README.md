@@ -7,62 +7,74 @@ Creating a decentralized payment gateway using time-based smart contracts on Roo
 Understanding the Smart Contracts:
 Smart contracts are self-executing contracts with the terms of the agreement directly written into code. They automate processes without intermediaries, ensuring transparency and trust. For a payment gateway, a time-based contract can automate payments based on specific conditions.
 
-By following these steps, you can develop a decentralized payment gateway on Rootstock that utilizes time-based smart contracts for automated transactions. This decentralized payment gateway on Rootstock will utilize time-based smart contracts for automated transactions on either a monthly recurring agreement or a one-time payment agreement between a customer (rBTC owner) and a merchant. The customer is purchasing a digital product. Refund after payment is not within the scope of this project.
+By following these steps, you can develop a decentralized payment gateway on Rootstock that utilizes time-based smart contracts for automated transactions. This decentralized payment gateway on Rootstock will utilize time-based smart contracts for automated transactions on 30 day  monthly recurring agreement with a merchant. For the purpose of this project, the buyer is purchasing a digital product. Refund after payment is not within the scope of this project.
 
 ------------
-Steps to Develop the Payment Gateway:
 
-Step 1. 
+Setup Instructions
 
-Set Up the Development Environment
+Do this:
+1. Clone the repository and install dependencies:
 
-a. Set up your IDE on your local machine. I used VScode for this project with a solidity plugin.
+bash
+git clone <repository-url>
+cd monthly-subscription-rootstock
+npm install
+Configure environment variables:
 
-b. Create a directory for this project. Go to that directory and install necessary tools including Node.js, npm, Hardhat for smart contract development. I used node v24.1.0. 
-  1.Open your terminal and check your version of node by typing node -v and if you have node v24.1.0
-  2.Install the hardhat project by typing install the hardhat project by typing npm install --save-dev hardhat
-  3. npx hardhat or npx hardhat init and at this point, install hardhat v. 2.24.3, say yes to gitignore and yes to sample project.
-  4. Open your IDE. If you are using VSCode, type code . and its should open your VSCode and the project
+Do this:
+2. Create you .env
 
-c. At your terminal, Install Ethers.js and Typescript for contract testing. 
+bash
+cp .env.example .env
+# Edit .env with your private key and RIF token address
 
-d. At your terminal, Install OpenZepplin for libraries.
+Do this:
+3. Compile the contracts and run tests
 
-e. Set up a new account in your Metamask wallet (or a wallet that supports rBTC (Rootstock Bitcoin). Setup the Rootstock testnet network and the Rootstock mainnet network in your wallet. Request to get rBTC test tokens from the Rootstock faucet sent to your Rootstock testnet network in your wallet (Use your public key for your Rootstock testnet network account in your wallet).
+Compile:
 
-f. Open your IDE and create a .env and .gitignore if you do not see them.
+bash
+npm run compile
 
-  Insert your private key, Rootstock Testnet and Rootstock Mainnet RPC's into your .env.
+Run tests:
 
-    Use this format: 
-    PRIVATE_KEY=your_private_key_here,
-    RSK_TESTNET_RPC=https://public-node.testnet.rsk.co 
-    RSK_MAINNET_RPC=https://public-node.rsk.co
+bash
+npm run test
+npm run test:gas
+npm run test:coverage
+Deploy to Rootstock testnet:
 
-Step 2.
+Do this:
+4. If all tests pass, deploy to the testnet.
 
-Design the Smart Contract! 
+bash
+npm run deploy:testnet
 
-Module 1: This is the capstone project Module. 
+Do this:
+5. Verify on Rootstock Explorer:
 
-The scope of my contribution to this idea will be to develop a single, clear on-chain primitive which is identified as a subscription state machine. This project is for my capstone project in the Rootstock rootcamp and is this Module 1.
-  
-a. Define the contract's rules, including payment conditions and time constraints. Use Solidity, the programming language for Ethereum-compatible smart contracts, to write the contract. Implement Time-Based Logic and include functions that trigger payments based on time conditions. For example, payments can be released after a specific action and time. More advanced contribution would be to integrate Oracles for External Data to fetch real-world data, such as exchange rates or event outcomes that may affect payment conditions. 
+bash
+npm run verify -- --network rootstockTestnet <contract-address> <rif-token-address>
 
-In this project, I required a specific time and exchange rate before the contract can payment is made.
+Important Notes
 
-Write the contract using Solidity v 0.8.20.
-Create a new file for the smart contract and name it Subscription.sol. Re-write includes RIFSubscription for the token needed to have recurring payment permission. 
+Solidity Version: Uses Solidity 0.8.19 with optimizations enabled
 
-Step 3.
+Rootstock Compatibility: Configured for Rootstock testnet (chainId 31) and mainnet (chainId 30)
 
-Testing the Smart Contract.
+Gas Settings: Gas price set to 60 MGas (60,000,000 wei) which is typical for Rootstock
 
-a. Write your tests in Typescript, run your tests and identify and fix security vulnerabilities in smart contracts. Conduct thorough testing to identify and fix any bugs. When all tests are passed, deploy the contract on a test network to ensure it functions as intended. To do this testing process, make sure you have setup Hardhat Coverage and Prettier. Reference additional resources such as "ConsenSys Smart Contract Best Practices", "OpenZeppelin Security Patterns" and "SWC Registry" if you need more info.
+Testing: Uses Hardhat's local network with time manipulation helpers
 
-b. When all tests pass, deploy your scripts to the Rootstock testnet, find them on the Rootstock testnet network explorer, flatten deployed files in your editor and verify the scripts on the Rootstock testnet.
+TypeChain: Generates TypeScript typings for contract interactions
 
-That concludes this project on the testnet.
+Gas Reporter: Optional gas reporting with REPORT_GAS=true npm run test
+
+Coverage: Uses solidity-coverage for test coverage reports
+
+These configuration files provide a complete development environment for the MonthlySubscription contract on Rootstock with RIF token support.
+
 
 ------------
 ***Careful***
