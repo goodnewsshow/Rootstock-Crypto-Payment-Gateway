@@ -22,7 +22,7 @@ cd monthly-subscription-rootstock
 npm install
 Configure environment variables:
 
-2. Create you .env
+2. Create your .env
 
 bash
 cp .env.example .env
