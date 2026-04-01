@@ -1,8 +1,10 @@
 # Rootstock-Crypto-Payment-Gateway
 
-Developing a Payment Gateway on Rootstock:
+# Rootstock is the longest running and leading Bitcoin L2.
 
-Creating a decentralized payment gateway using time-based smart contracts on Rootstock involves several key steps. Rootstock allows for the integration of smart contracts on the Bitcoin blockchain, enabling programmable finance solutions.
+Developing a Payment Gateway on Rootstock with recurring payment capability with buyer giving permission by using RIF token:
+
+Creating a decentralized payment gateway using time-based smart contracts on Rootstock involves several key steps. As an EVM‑compatible sidechain, Rootstock connects Bitcoin with the broader smart‑contract ecosystem—without changing Bitcoin itself. Rootstock enables complex transactions and DeFi activity that drive network usage maintains an uncompromised security because they are anchored to Bitcoin’s PoW. Rootstock has a merged mining incentive to Bitcoin miners yet as an EVM-compatible sidechain, smart contracts can be deployed to its sidechain. Therefore, it uses the security of Bitcoin and allows deployment of EVM smart contracts for state changes. Rootstock is the longest running Bitcoin L2.
 
 Understanding the Smart Contracts:
 Smart contracts are self-executing contracts with the terms of the agreement directly written into code. They automate processes without intermediaries, ensuring transparency and trust. For a payment gateway, a time-based contract can automate payments based on specific conditions.
@@ -10,10 +12,8 @@ Smart contracts are self-executing contracts with the terms of the agreement dir
 By following these steps, you can develop a decentralized payment gateway on Rootstock that utilizes time-based smart contracts for automated transactions. This decentralized payment gateway on Rootstock will utilize time-based smart contracts for automated transactions on 30 day  monthly recurring agreement with a merchant. For the purpose of this project, the buyer is purchasing a digital product. Refund after payment is not within the scope of this project.
 
 ------------
+# Setup Instructions
 
-Setup Instructions
-
-Do this:
 1. Clone the repository and install dependencies:
 
 bash
@@ -26,6 +26,7 @@ Configure environment variables:
 
 bash
 cp .env.example .env
+
 # Edit .env with your private key and RIF token address
 
 3. Compile the contracts and run tests
@@ -53,7 +54,7 @@ npm run deploy:testnet
 bash
 npm run verify -- --network rootstockTestnet <contract-address> <rif-token-address>
 
-Important Notes
+# Important Notes
 
 Solidity Version: Uses Solidity 0.8.19 with optimizations enabled
 
@@ -73,8 +74,8 @@ These configuration files provide a complete development environment for the Mon
 
 
 ------------
-***Careful***
-***Important Warning:***
+# Careful
+# Important Warning
 
 Key Considerations:
 1. Once testing on the Rootstock Testnet is complete, you could deploy the smart contract on the Rootstock mainnet.
