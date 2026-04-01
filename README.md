@@ -22,14 +22,12 @@ cd monthly-subscription-rootstock
 npm install
 Configure environment variables:
 
-Do this:
 2. Create you .env
 
 bash
 cp .env.example .env
 # Edit .env with your private key and RIF token address
 
-Do this:
 3. Compile the contracts and run tests
 
 Compile:
@@ -45,13 +43,11 @@ npm run test:gas
 npm run test:coverage
 Deploy to Rootstock testnet:
 
-Do this:
 4. If all tests pass, deploy to the testnet.
 
 bash
 npm run deploy:testnet
 
-Do this:
 5. Verify on Rootstock Explorer:
 
 bash
